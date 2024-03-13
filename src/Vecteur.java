@@ -1,17 +1,20 @@
 public class Vecteur {
     private int[] tableau;
-    private  int nbElement;
+    private int nbElement;
     public int RATION_AGRANDISSEMENT = 2;
-    public int TAILLE_INITIALE = 0;
+    public int TAILLE_INITIALE = 5;
 
     public Vecteur() {
         tableau = new int[TAILLE_INITIALE];
         nbElement = 0;
     }
+    public int getNbElement() {
+        return nbElement;
+    }
     public void ajoute(int element) {
-        if (nbElement >= tableau.length) {
+        if (nbElement <= tableau.length) {
             resize();
-            tableau[TAILLE_INITIALE++] = element;
+            tableau[nbElement++] = element;
         }
     }
     @Override
