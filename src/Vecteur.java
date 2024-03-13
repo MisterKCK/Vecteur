@@ -14,7 +14,6 @@ public class Vecteur {
             tableau[TAILLE_INITIALE++] = element;
         }
     }
-
     @Override
     public String toString() {
         String str = "[";
