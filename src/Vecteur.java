@@ -4,8 +4,8 @@ public class Vecteur {
     public int RATION_AGRANDISSEMENT = 2;
     public int TAILLE_INITIALE = 0;
 
-    public Vecteur(int taille_initiale) {
-        tableau = new int[taille_initiale];
+    public Vecteur() {
+        tableau = new int[TAILLE_INITIALE];
         nbElement = 0;
     }
     public void ajoute(int element) {
@@ -13,6 +13,15 @@ public class Vecteur {
             resize();
             tableau[TAILLE_INITIALE++] = element;
         }
+    }
+
+    @Override
+    public String toString() {
+        String str = "[";
+        for (int i = 0; i < nbElement; i++) {
+            str += tableau[i] + " , ";
+        }
+        return str + "]";
     }
 
     private void resize() {
